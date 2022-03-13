@@ -1,0 +1,41 @@
+.col1
+{
+    background-color: darkgrey;
+    font-family:monospace;  
+    text-decoration: underline; 
+    float: left;
+    font-size: 35;
+    padding-right: 50;
+    padding-bottom: 387;
+    margin-right: 4;
+    border: 2px solid;
+    text-align: center;
+}
+
+.col2
+{
+    background-color: darkgrey;
+    font-family: monospace;
+    text-decoration: underline; 
+    padding-bottom: 70;
+    font-size: 35;
+    float: left;
+    padding-right: 15;
+    padding-bottom: 207;
+    border: 2px solid;
+    text-align: center;
+    margin-right: 4;
+}
+
+.col3
+{
+    background-color: darkgrey;
+    font-family:monospace;
+    text-decoration: underline; 
+    float: left;
+    padding-right: 10px;
+    padding-bottom: 275;
+    font-size: 35;
+    border: 2px solid;
+    text-align: left;
+}
