@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+    .menu{
+            text-align: center;
+        }
+    table,tr,td {
+      border: 2px solid black;
+      border-collapse:collapse;
+      padding: 10px;
+      margin:auto;
+}
+.bill1{
+      margin-left: 33%;
+      margin-right: 20%;
+ }
+ .sf {
+      height: 25px;
+    }
+ #quantity{
+      width:30%;
+      height: 25px;
+      margin-left: 95px;
+      border: 2px solid #b4b39d;
+      border-radius: 6px;
+      background-color:darkgrey;
+    }
+    .add {
+      color: white;
+      margin-left: 190px;
+      padding: 15px;
+      text-align: center;
+      border: none;
+      font-size: 16px;
+      background-color: #555555;
+      border-radius: 4px;
+    }
+    .text{
+        margin-left: 120px;
+    }   
+    .text1{
+        margin-left: 25px;
+    }
+    .text2{
+        margin-left: 45px;
+    }
+    .text3{
+        margin-left: 140px;
+    }
+    </style>
+</head>
+<body>
+    <h1 style="color: goldenrod;text-align: center;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">GST Calculator</h1>
+    <p style="text-align: center;font-size:large;">Calculate the price for your goods with the tax amount</p>
+    <div class="a">
+    <div class="menu">
+        <h1 style="font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;font-style: oblique;font-weight: bold;">The Menu</h1>
+    <table style="border: 2px;">
+        <tr>
+            <td>Products</td>
+            <td>Sony Television</td>
+            <td>Hp Laptops</td>
+            <td>Pizza</td>
+            <td>Shawarma</td>
+            <td>Iphones</td>
+        </tr>
+        <tr>
+            <td>Minimum Retail Price</td>
+            <td>Rs.25,000</td>
+            <td>Rs.60,000</td>
+            <td>Rs.400</td>
+            <td>Rs.200</td>
+            <td>Rs.90,000</td>
+        </tr>
+    </table>
+    </div>
+    <br><br><br>
+    <form action="get" class="bill1">
+        Name of the Customer &nbsp;:<input type="text" id="name" class="text1">
+            <select name="Product" id="prod" class="sf">
+            <option selected value="Shawarma">Shawarma</option>
+            <option value="Sony">Sony Television</option>
+            <option value="Hp">Hp Laptops</option>
+            <option value="Pizza">Pizza</option>
+            <option value="Iphone">Iphone</option>
+        </select>
+        <br><br>
+        Customer's Address &nbsp;:<input type="text" name="" class="text2" id="address">
+        <br><br>
+        Quantity&nbsp;:<input type="text" class="text" id="quantity1">
+        <br><br>
+        Price &nbsp;:<input type="number" id="price" class="text3">
+        <br><br>
+        <input type="button" value="Pay Your Bill!" onclick="gstcalc()" class="add">
+       
+    </form>
+</div>
+<p style="text-align: center;font-size: large;font-weight: bold;" id="demo">Billing:</p>
+<div class="b">
+    <br>
+    <table style="border: 10px solid; color: #555555; "class="quantity">
+        
+    <tr>
+    <td><p  style="text-align: center;">Bill Amount:</p></td>
+        <td id="demo1"></td>
+    </tr>
+    <tr>
+        <td><p  style="text-align: center;">Item Name:</p></td>
+        <td id="d3"></td>
+    </tr>
+    <tr>
+        <td><p style="text-align: center;">Customer Name:</p> </td>
+        <td id="d4">  </td>
+    </tr>
+    <tr><td><p style="text-align: center;">Customer Address:</p></td>
+    <td id="d5"></td>
+    </tr>
+    <tr><td><p style="text-align: center;">GST %:</p>
+    <td id="d6"></td>
+    </td></tr>
+
+</table>
+</div>
+<script>
+    function gstcalc(){ 
+        var z = document.getElementById("prod").selectedIndex;
+        var l = document.getElementById("prod").options;
+        var name=document.getElementById("name").value;
+        var address=document.getElementById("address").value;
+        var y;
+        var c;
+        var t;
+        var g;
+        var gst1;
+        var b = document.getElementById("address").value;
+        var x = parseInt(document.getElementById("price").value);
+        var w = parseInt(document.getElementById("quantity1").value);
+    
+        switch (l[z].index) {
+            case 0:
+                c=18/100;
+                g=x*c                
+                y = ((w*2)+ (x *c));
+                t=g*w;
+                break;
+            case 1:
+                c=19/100
+                y = ((w*x)+ (x *c));
+                g=x*c;
+                t=g*w;
+                break;
+            case 2:
+                c=30/100;
+                y=((w*x))+(x*c);
+                g=x*c;
+                t=g*w;
+                break;
+            case 3:
+                c=20/100;
+                y=((w*x))+(x*c);
+                g=x*c;
+                t=g*w;
+
+                break;
+            case 4:
+                c=25/100;
+                y= y=((w*x))+(x*c);
+                g=x*c;
+                t=g*w;
+            default:
+                Error
+        }
+        document.getElementById("demo1").innerHTML ="Rs"+y;
+        document.getElementById("d3").innerHTML =""+l[z].text;
+        document.getElementById("d4").innerHTML=""+name;
+        document.getElementById("d5").innerHTML=""+address;
+        document.getElementById("d6").innerHTML=""+c;
+    }
+</script>
+</body>
+</html>
+
+
+
+        else if(unit==0 && unit <=500)
+        {
+          unit=unit-100
+          if(unit>100 && unit<=200)
+          {
+            tot=one*2;
+          }
+          else if(one>200 && one<=500)
+          {
+            two=unit-100;
+            if(two)
+          }
+        }
