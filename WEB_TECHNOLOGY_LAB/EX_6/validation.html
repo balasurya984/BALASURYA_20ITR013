@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/bootstrap.bundle.js"></script>
+</head>
+
+<body style="background-color:#ffffff">
+    <div class="container" style="margin-top: 10px; border: 2px solid;">
+        <div class="row" style="text-align: center; background-color: #585858; ">
+        <span style="color: rgb(220, 220, 220);">
+          <h1 style="text-align: center;font-size: 50px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">EVENT REGISTRATION</h1>
+        </span>
+        </div>
+    </div>
+    <br>
+    <div class="container">
+        <form action="http://localhost:3030" method="get" name="form">
+            <table class="table table-secondary" style="border: 1px solid;">
+                <div class="form-group">
+                    <tr>
+                        <td>Name:</td>
+                        <td><input type="text" name="name"  oninput="name1(this.value)" required autofocus></td>
+                        <td id="n"></td>
+                    </tr>
+                    <tr>
+                        <td>Email:</td>
+                        <td><input type="email" name="email" oninput="email1(this.value)" required></td>
+                        <td id="mail" aria-placeholder="alert" ></td>
+                    </tr>
+                    <tr>
+                        <td>Mobile:</td>
+                        <td><input type="number" name="mobile" oninput="number1(this.value)" required></td>
+                        <td id="number"></td>
+                    </tr>
+                    <tr>
+                        <td>Username:</td>
+                        <td><input type="text" name="uname" oninput="username1(this.value)" required></td>
+                        <td id="username"></td>
+                    </tr>
+                    <tr>
+                        <td>Password:</td>
+                        <td><input type="password" name="pass" oninput="password1(this.value)" required></td>
+                        <td id="pas"></td>
+                    </tr>
+                    <tr>
+                        <td>Events:</td>
+                        <td>
+                            <input type="checkbox" name="val" id="cb1" value="code" oninput="event1(this.value)">Coding <br>
+                            <input type="checkbox" name="val" id="cb2" value="paper"oninput="event1(this.value)">Paper <br>
+                            <input type="checkbox" name="val" id="cb3" value="flag" oninput="event1(this.value)">Capture the flag <br>
+                        </td>
+                        <td id="event"></td>
+                    </tr>
+                    <tr>
+                        <td>Gender:</td>
+                        <td>
+                            <input type="radio" name="radio" value="male" >Male
+                            <input type="radio" name="radio" value="female" >Female
+                        </td>
+                        <td id="gen"></td>
+                    </tr>
+                    <tr>
+                        <td>City:</td>
+                        <td>
+                            <select name="city" id="city">
+                                <option value="none">None</option>
+                                <option value="Erode">Erode</option>
+                                <option value="Coimbatore">Coimbatore</option>
+                                <option value="Tiruppur">Tiruppur</option>
+                                <option value="Namakkal">Namakkal</option>
+                            </select><br>
+                        </td>
+                        <td id="ci"></td>
+                    </tr>
+
+                </div>
+            </table>
+            <div>
+                <input type="submit" class="btn btn-secondary" value="Submit" onclick="gender1()">
+            </div>
+        </form>
+
+    </div>
+    <script src="./event.js"></script>
+</body>
+</html>
