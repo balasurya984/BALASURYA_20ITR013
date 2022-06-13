@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script type="text/javascript" src=></script>
+</head>
+<body>
+    <form action="/forms.htm" method="post" name="reg" onsubmit="formvalidated();">
+        <table style="padding: 120px;margin-left: 150px;">
+            <tr>
+                <td>
+                    Name: <input type="text" name="name" id="name"><br><br>
+                </td>
+            <tr>
+                <td>
+                    Username:<input type="text" name="username" id=""><br><br>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                  E-Mail Id:<input type="email" name="email" id="email"><br><br>
+                </td>
+                <tr>
+                    <td>
+                        Password:<input type="password" name="pass" id="pass"><br><br>
+                    </td>
+                </tr>
+            <tr>
+                <td>
+                    Gender:<input type="radio" name="gen" id="mygender" value="male">Male
+                    <input type="radio" name="gen" id="mygender" value="female">Female<br><br>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Your City:<select name="city" id="city">
+                        <option value="select">select</option>
+                        <option value="erd">Erode</option>
+                        <option value="cbe">Coimbatore</option>
+                        <option value="tpr">Tiruppur</option>
+                        <option value="nam">Namakkal</option>
+                    </select><br><br>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" name="check" id="check" value="Agree";>I hereby declare I agree to all the terms and conditions! <br><br>
+                    
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="add">Address:</label>
+                     <textarea name="textarea" id="" cols="30" rows="1"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                 <br>
+                 <input type="submit" value="register" style="margin-left: 50px;">
+                </td>
+            </tr>
+        </table>
+        <p id="messages"></p>
+   
+    
+    
+     
+  
+    
+    
+
+    </form>
+<script>
+       function formvalidated()
+        
+        {
+        var city=document.reg.city.value;
+        var check=document.getElementById("check")
+        var username=document.reg.username.value;
+        let regex=/^[a-z \_]+$/;
+        var result=regex.test(username);
+        var address=document.reg.textarea;
+        var name=document.reg.name.value;
+        let names=/^[A-Z \.]+$/;
+        var results=names.test(name);
+        var password=document.reg.pass.value;
+        let pass=/^[a-z A-Z\@\!\#\$]+$/;
+        var passes=pass.test(pass)
+        var email=document.reg.email.value;
+        let mail=/^[a-z\0-100\@]+$/;
+        var emailval=mail.test(email)
+        
+        if(name==null||name==""||name.length==0)
+        {
+            alert("Name shouldn't be blank")
+            return false;
+        }
+        if(name.length>20)
+        {
+            alert("Name shouldn't be lengthier than 20")
+            return false;
+        }
+        if(!results)
+        {
+            alert("Name should be capital letters")
+            return false;
+        }
+        if(username==null || username=="" || username.length==0 )
+            {
+          alert("Username shouldn't be blank")
+            return false;
+            }
+            if(!result)
+            {
+            alert("Username should be only text")
+            return false;
+    
+        }
+            if(username.length>6)
+            {
+            alert("Username cant be lengthier than 6 characters")
+            return false;
+        
+        }
+        if(email==null||email==""||email.length==0)
+        {
+            
+            alert("Email shouldn't be blank")
+            return false;
+        }
+        if(emailval){
+            alert("Give a email satisfying conditions")
+            return false;
+        }
+        if(password==null || password==""||password.length==0)
+        {
+            alert("Password shouldn't be blank")
+            return false;
+        }
+        if(passes)
+        {
+            alert("Password should satisfy the conditions")
+            return false;
+        }
+        if(password.length<8 || password.length>12)
+            {
+                alert("Password should be around 8 to 12 characters")
+                return false;
+            }
+        if(document.reg.gen[0].checked==false&&document.reg.gen[1].checked==false)
+        {
+           alert("Select Your Gender")
+            return false;
+            }
+            if(city=="select")
+       {
+           alert("Select a state")
+           return false;
+       }
+       if(!this.reg.check.checked){
+           alert("You have to agree to the terms & conditions")
+           return false;
+       }
+       if(address.value.length<=0)
+    {
+        alert("Adress should be given")
+        return false;
+    }
+    else
+    {
+        return true;
+       }
+       }
+
+    </script>
+</body>
+
+</html>
